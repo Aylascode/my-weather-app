@@ -1,3 +1,20 @@
-h1 {
-  color: blue;
+.card {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  max-width: 430px;
+  padding: -10px;
+}
+.card-body {
+  padding: 15px 10px 5px 10px;
+}
+.h1,
+.h2,
+.dayTime {
+  color: #790a2d;
+}
+.temp {
+  margin-right: 15px;
+  display: inline;
+}
+.btn {
+  font-family: "Quicksand", sans-serif;
 }

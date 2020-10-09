@@ -18,8 +18,39 @@
   </head>
 
   <body>
-    <h1>Test</h1>
+   <div class="container">
+      <div class="card frame">
+        <div class="card-body pb-1">
+          <h1 class="cityWeather h1" id="city">Paris</h1>
+          <p class="dayTime" id="todayAndTime">Tuesday 4pm</p>
+          <div class="row cityTemp">
+              <div class="col-4 pr-0">
+              <span class="temperature h2" id="temperature">18 </span>
+              <span class="tempUnits">
+                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </div>
+               <form class="form-inline form align-items-centre" id="searchBar">
+              <div class="form-inline">
+                <input
+                  type="city"
+                  class="form-control mb-3 mr-1"
+                  placeholder="Change city"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="citySearch"
+                />
+                </div>
+                     <button type="submit" class="btn btn-outline-info rounded mb-3">
+                Go
+              </button>
+            </form>
+                
+            <div>
 
+        </div>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>
