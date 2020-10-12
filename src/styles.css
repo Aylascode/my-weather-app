@@ -46,3 +46,8 @@ li {
 .cityWeather {
   margin-bottom: 0;
 }
+.tag {
+  font-family: "Quicksand", sans-serif;
+  font-size: 12px;
+  color: #790a2d;
+}
