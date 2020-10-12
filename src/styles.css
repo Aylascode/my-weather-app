@@ -18,3 +18,31 @@
 .btn {
   font-family: "Quicksand", sans-serif;
 }
+.col-3,
+.col-5,
+.col-2 {
+  color: #ffffff;
+}
+
+li {
+  background-image: linear-gradient(270deg, #93a5cf 0%, #cde7d9e3 100%);
+  font-family: "Quicksand", sans-serif;
+}
+.list-group-item {
+  cursor: default;
+  padding: 5px 10px;
+}
+.lines:hover {
+  background-image: linear-gradient(to top, #8b90d6 0%, #5096b6 100%);
+  transition: all 150ms ease-in-out;
+  cursor: default;
+}
+.far,
+.fas {
+  color: #790a2d;
+}
+
+.dayTime,
+.cityWeather {
+  margin-bottom: 0;
+}
