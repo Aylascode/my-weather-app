@@ -38,9 +38,20 @@ function showTemperature(responce) {
   weatherIcon.setAttribute("alt", responce.data.weather[0].description);
 }
 
-let apiKey = "c3fb1aea0fcac49229fe92764b89263e";
-let units = "metric";
-let city = "paris";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+function search(city) {
+  let apiKey = "c3fb1aea0fcac49229fe92764b89263e";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function searchBar(event) {
+  event.preventDefault();
+  let city = document.querySelector("#citySearch");
+  search(city.value);
+}
+
+search("London");
+let form = document.querySelector("#searchBar");
+form.addEventListener("submit", searchBar);
