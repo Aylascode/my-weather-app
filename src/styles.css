@@ -51,3 +51,6 @@ li {
   font-size: 12px;
   color: #790a2d;
 }
+.icon {
+  max-width: 50px;
+}

@@ -27,9 +27,7 @@
       <div class="card frame">
         <div class="card-body pb-1">
           <h1 class="cityWeather h1" id="city"></h1>
-          <p class="dayTime">
-            Updated: <span id="todayAndTime">Tuesday 16:00</span>
-          </p>
+          <p class="dayTime">Updated: <span id="todayAndTime"></span></p>
           <p class="" id="weatherDescription"></p>
           <div class="row cityTemp">
             <div class="col-4 pr-0">
@@ -60,11 +58,11 @@
           <ul class="list-group list-group-flush lines">
             <li class="list-group-item py-2 lines">
               <div class="row day">
-                <div class="col-1 cols">
-                  <i class="far fa-sun"></i>
+                <div class="col-2 cols">
+                  <img src="" alt="" id="todayIcon" class="icon" />
                 </div>
-                <div class="col-3 cols" id="dayOneName">Mon</div>
-                <div class="col-3 cols" id="dayOneTempreture"></div>
+                <div class="col-3 cols" id="dayOneName"></div>
+                <div class="col-2 cols" id="dayOneTempreture"></div>
                 <div class="col-5 cols">
                   Humidity <span id="dayOneHumidity"> </span>% <br />
                   Wind <span id="dayOneWindSpeed"></span> km/h
@@ -73,53 +71,53 @@
             </li>
             <li class="list-group-item py-2 lines">
               <div class="row day">
-                <div class="col-1 cols">
+                <div class="col-2 cols">
                   <i class="far fa-sun"></i>
                 </div>
-                <div class="col-3 cols">Tues</div>
-                <div class="col-3 cols">20°C</div>
+                <div class="col-3 cols" id="dayTwoName">Tues</div>
+                <div class="col-2 cols" id="dayTwoTempreture">20°C</div>
                 <div class="col-5 cols">
-                  Precipitation 8% <br />
-                  Wind 4mph
+                  Humidity <span id="dayTwoHumidity"> </span>% <br />
+                  Wind <span id="dayTwoWindSpeed"></span> km/h
                 </div>
               </div>
             </li>
             <li class="list-group-item py-2 lines">
               <div class="row day">
-                <div class="col-1 cols">
+                <div class="col-2 cols">
                   <i class="far fa-sun"></i>
                 </div>
-                <div class="col-3 cols">Weds</div>
-                <div class="col-3 cols">25°C</div>
+                <div class="col-3 cols" id="dayThreeName">Weds</div>
+                <div class="col-2 cols" id="dayThreeTemperature">25°C</div>
                 <div class="col-5 cols">
-                  Precipitation 1% <br />
-                  Wind 4mph
+                  Humidity <span id="dayThreeHumidity"> </span>% <br />
+                  Wind <span id="dayThreeWindSpeed"></span> km/h
                 </div>
               </div>
             </li>
             <li class="list-group-item py-2 lines">
               <div class="row day">
-                <div class="col-1 cols">
+                <div class="col-2 cols">
                   <i class="fas fa-cloud-sun"></i>
                 </div>
-                <div class="col-3 cols">Thurs</div>
-                <div class="col-3 cols">22°C</div>
+                <div class="col-3 cols" id="dayFourName">Thurs</div>
+                <div class="col-2 cols" id="dayFourTemperature">22°C</div>
                 <div class="col-5 cols">
-                  Precipitation 15% <br />
-                  Wind 4mph
+                  Humidity <span id="dayFourHumidity"> </span>% <br />
+                  Wind <span id="dayFourWindSpeed"></span> km/h
                 </div>
               </div>
             </li>
             <li class="list-group-item py-2 lines">
               <div class="row day">
-                <div class="col-1 cols">
+                <div class="col-2 cols">
                   <i class="fas fa-cloud-sun-rain"></i>
                 </div>
-                <div class="col-3 cols">Fri</div>
-                <div class="col-3 cols">20°C</div>
+                <div class="col-3 cols" id="dayFiveName">Fri</div>
+                <div class="col-2 cols" id="dayFiveTemperature">20°C</div>
                 <div class="col-5 cols">
-                  Precipitation 95% <br />
-                  Wind 4mph
+                  Humidity <span id="dayFiveHumidity"> </span>% <br />
+                  Wind <span id="dayFiveWindSpeed"></span> km/h
                 </div>
               </div>
             </li>

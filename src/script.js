@@ -10,6 +10,8 @@ function dateAndTime(timestamp) {
   }
   let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
+  let today = document.querySelector("#dayOneName");
+  today.innerHTML = day;
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -21,6 +23,7 @@ function showTemperature(responce) {
   let windSpeed = document.querySelector("#dayOneWindSpeed");
   let dayOneTemp = document.querySelector("#dayOneTempreture");
   let UpdatedDayAndTime = document.querySelector("#todayAndTime");
+  let weatherIcon = document.querySelector("#todayIcon");
   temperatureToday.innerHTML = Math.round(responce.data.main.temp);
   citySelected.innerHTML = responce.data.name;
   weatherDescribed.innerHTML = responce.data.weather[0].description;
@@ -28,6 +31,11 @@ function showTemperature(responce) {
   windSpeed.innerHTML = Math.round(responce.data.wind.speed);
   dayOneTemp.innerHTML = Math.round(responce.data.main.temp);
   UpdatedDayAndTime.innerHTML = dateAndTime(responce.data.dt * 1000);
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", responce.data.weather[0].description);
 }
 
 let apiKey = "c3fb1aea0fcac49229fe92764b89263e";
