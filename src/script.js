@@ -8,10 +8,17 @@ function dateAndTime(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  let time = `${hours}:${minutes}`;
   let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
   let today = document.querySelector("#dayOneName");
   today.innerHTML = day;
+  let sunriseTime = document.querySelector("#dayOneSunrise");
+  sunriseTime.innerHTML = time;
+  console.log(sunriseTime);
+  let sunsetTime = document.querySelector("#dayOneSunset");
+  sunsetTime.innerHTML = time;
+  console.log(sunsetTime);
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -24,6 +31,8 @@ function showTemperature(responce) {
   let dayOneTemp = document.querySelector("#dayOneTempreture");
   let UpdatedDayAndTime = document.querySelector("#todayAndTime");
   let weatherIcon = document.querySelector("#todayIcon");
+  let sunriseTime = document.querySelector("#dayOneSunrise");
+  let sunsetTime = document.querySelector("#dayOneSunset");
   temperatureToday.innerHTML = Math.round(responce.data.main.temp);
   citySelected.innerHTML = responce.data.name;
   weatherDescribed.innerHTML = responce.data.weather[0].description;
@@ -31,6 +40,10 @@ function showTemperature(responce) {
   windSpeed.innerHTML = Math.round(responce.data.wind.speed);
   dayOneTemp.innerHTML = Math.round(responce.data.main.temp);
   UpdatedDayAndTime.innerHTML = dateAndTime(responce.data.dt * 1000);
+  sunriseTime = dateAndTime(responce.data.sys.sunrise * 1000);
+  console.log(responce.data.sys.sunrise * 1000);
+  sunsetTime = dateAndTime(responce.data.sys.sunset * 1000);
+  console.log(responce.data.sys.sunset * 1000);
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`

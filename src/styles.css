@@ -37,6 +37,22 @@ li {
   transition: all 150ms ease-in-out;
   cursor: default;
 }
+
+.lines .sunrise,
+.lines .sunset {
+  display: none;
+}
+
+.lines:hover .humidity,
+.lines:hover .wind {
+  display: none;
+}
+
+.lines:hover .sunrise,
+.lines:hover .sunset {
+  display: inline;
+}
+
 .far,
 .fas {
   color: #790a2d;
