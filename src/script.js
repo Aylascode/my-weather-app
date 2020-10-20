@@ -1,4 +1,4 @@
-function dateAndTime(timestamp) {
+function timing(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -9,17 +9,16 @@ function dateAndTime(timestamp) {
     minutes = `0${minutes}`;
   }
   let time = `${hours}:${minutes}`;
+  return time;
+}
+
+function date(timestamp) {
+  let date = new Date(timestamp);
   let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
   let today = document.querySelector("#dayOneName");
   today.innerHTML = day;
-  let sunriseTime = document.querySelector("#dayOneSunrise");
-  sunriseTime.innerHTML = time;
-  console.log(sunriseTime);
-  let sunsetTime = document.querySelector("#dayOneSunset");
-  sunsetTime.innerHTML = time;
-  console.log(sunsetTime);
-  return `${day} ${hours}:${minutes}`;
+  return day;
 }
 
 function showTemperature(responce) {
@@ -29,26 +28,30 @@ function showTemperature(responce) {
   let humidityToday = document.querySelector("#dayOneHumidity");
   let windSpeed = document.querySelector("#dayOneWindSpeed");
   let dayOneTemp = document.querySelector("#dayOneTempreture");
-  let UpdatedDayAndTime = document.querySelector("#todayAndTime");
   let weatherIcon = document.querySelector("#todayIcon");
+
+  let updatedDay = document.querySelector("#today");
+  let updatedTime = document.querySelector("#time");
   let sunriseTime = document.querySelector("#dayOneSunrise");
   let sunsetTime = document.querySelector("#dayOneSunset");
+
   temperatureToday.innerHTML = Math.round(responce.data.main.temp);
   citySelected.innerHTML = responce.data.name;
   weatherDescribed.innerHTML = responce.data.weather[0].description;
   humidityToday.innerHTML = responce.data.main.humidity;
   windSpeed.innerHTML = Math.round(responce.data.wind.speed);
   dayOneTemp.innerHTML = Math.round(responce.data.main.temp);
-  UpdatedDayAndTime.innerHTML = dateAndTime(responce.data.dt * 1000);
-  sunriseTime = dateAndTime(responce.data.sys.sunrise * 1000);
-  console.log(responce.data.sys.sunrise * 1000);
-  sunsetTime = dateAndTime(responce.data.sys.sunset * 1000);
-  console.log(responce.data.sys.sunset * 1000);
+
   weatherIcon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", responce.data.weather[0].description);
+
+  updatedDay.innerHTML = date(responce.data.dt * 1000);
+  updatedTime.innerHTML = timing(responce.data.dt * 1000);
+  sunriseTime.innerHTML = timing(responce.data.sys.sunrise * 1000);
+  sunsetTime.innerHTML = timing(responce.data.sys.sunset * 1000);
 }
 
 function search(city) {
