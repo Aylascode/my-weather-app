@@ -30,13 +30,13 @@
           <p class="dayTime">
             Updated: <span id="today"> </span> <span id="time"></span>
           </p>
-          <p class="" id="weatherDescription"></p>
+          <p class="weatherDescription" id="weatherDescription"></p>
           <div class="row cityTemp">
             <div class="col-4 pr-0">
               <span class="temperature h2" id="temperature"> </span>
               <span class="tempUnits">
-                <a href="#" id="celsius-link">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
+                <a href="#" id="celsius-link" class="active">°C</a> 
+                <a href="#" id="fahrenheit-link" class="">°F</a>
               </span>
             </div>
             <form class="form-inline form align-items-centre" id="searchBar">
@@ -90,8 +90,19 @@
                 <div class="col-3 cols" id="dayTwoName">Tues</div>
                 <div class="col-2 cols" id="dayTwoTempreture">20°C</div>
                 <div class="col-5 cols">
-                  Humidity <span id="dayTwoHumidity"> </span>% <br />
-                  Wind <span id="dayTwoWindSpeed"></span> km/h
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayTwoHumidity"> </span>%
+                  </span>
+                  <span class="sunrise" id="sunrise"
+                    >Sunrise <span id="dayTwoSunrise"></span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayTwoWindSpeed"></span> km/h</span
+                  >
+                  <span class="sunset" id="sunset"
+                    >Sunset <span id="dayTwoSunset"></span>
+                  </span>
                 </div>
               </div>
             </li>
@@ -103,8 +114,18 @@
                 <div class="col-3 cols" id="dayThreeName">Weds</div>
                 <div class="col-2 cols" id="dayThreeTemperature">25°C</div>
                 <div class="col-5 cols">
-                  Humidity <span id="dayThreeHumidity"> </span>% <br />
-                  Wind <span id="dayThreeWindSpeed"></span> km/h
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayThreeHumidity"> </span>%
+                  </span>
+                  <span class="sunrise" id="sunrise"
+                    >Sunrise <span id="dayThreeSunrise"></span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayThreeWindSpeed"></span> km/h</span
+                  >
+                  <span class="sunset" id="sunset"
+                    >Sunset <span id="dayThreeSunset"></span>
                 </div>
               </div>
             </li>
@@ -116,8 +137,18 @@
                 <div class="col-3 cols" id="dayFourName">Thurs</div>
                 <div class="col-2 cols" id="dayFourTemperature">22°C</div>
                 <div class="col-5 cols">
-                  Humidity <span id="dayFourHumidity"> </span>% <br />
-                  Wind <span id="dayFourWindSpeed"></span> km/h
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayFourHumidity"> </span>%
+                  </span>
+                  <span class="sunrise" id="sunrise"
+                    >Sunrise <span id="dayFourSunrise"></span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayFourWindSpeed"></span> km/h</span
+                  >
+                  <span class="sunset" id="sunset"
+                    >Sunset <span id="dayFourSunset"></span>
                 </div>
               </div>
             </li>
@@ -129,8 +160,18 @@
                 <div class="col-3 cols" id="dayFiveName">Fri</div>
                 <div class="col-2 cols" id="dayFiveTemperature">20°C</div>
                 <div class="col-5 cols">
-                  Humidity <span id="dayFiveHumidity"> </span>% <br />
-                  Wind <span id="dayFiveWindSpeed"></span> km/h
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayFiveHumidity"> </span>%
+                  </span>
+                  <span class="sunrise" id="sunrise"
+                    >Sunrise <span id="dayFiveSunrise"></span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayFiveWindSpeed"></span> km/h</span
+                  >
+                  <span class="sunset" id="sunset"
+                    >Sunset <span id="dayFiveSunset"></span>
                 </div>
               </div>
             </li>
