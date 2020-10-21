@@ -50,7 +50,6 @@ function showTemperature(responce) {
 
   celsiusTemperature = Math.round(responce.data.main.temp);
   updatedDay.innerHTML = date(responce.data.dt * 1000);
-  console.log(date(responce.data.dt * 1000));
   updatedTime.innerHTML = timing(responce.data.dt * 1000);
   sunriseTime.innerHTML = timing(responce.data.sys.sunrise * 1000);
   sunsetTime.innerHTML = timing(responce.data.sys.sunset * 1000);
@@ -63,8 +62,6 @@ function fiveDayForecast(responce) {
   let forecastDayFive = document.querySelector("#dayFiveForecast");
 
   let forecast = responce.data.list[8];
-  console.log(forecast);
-  console.log(responce.data);
   forecastDayTwo.innerHTML = `
                 <div class="col-2 cols">
                   <img class="icon" src="http://openweathermap.org/img/wn/${

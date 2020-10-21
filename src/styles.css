@@ -77,8 +77,8 @@ li {
 }
 
 .tempUnits {
-  float: right;
-  margin-right: 30px;
+  margin-bottom: 20px;
+  margin-right: 5px;
 }
 
 .tempUnits .active {
