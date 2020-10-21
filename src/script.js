@@ -16,12 +16,11 @@ function date(timestamp) {
   let date = new Date(timestamp);
   let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
   let day = days[date.getDay()];
-  let today = document.querySelector("#dayOneName");
-  today.innerHTML = day;
   return day;
 }
 
 function showTemperature(responce) {
+  let today = document.querySelector("#dayOneName");
   let temperatureToday = document.querySelector("#temperature");
   let citySelected = document.querySelector("#city");
   let weatherDescribed = document.querySelector("#weatherDescription");
@@ -35,6 +34,7 @@ function showTemperature(responce) {
   let sunriseTime = document.querySelector("#dayOneSunrise");
   let sunsetTime = document.querySelector("#dayOneSunset");
 
+  today.innerHTML = date(responce.data.dt * 1000);
   temperatureToday.innerHTML = Math.round(responce.data.main.temp);
   citySelected.innerHTML = responce.data.name;
   weatherDescribed.innerHTML = responce.data.weather[0].description;
@@ -50,17 +50,177 @@ function showTemperature(responce) {
 
   celsiusTemperature = Math.round(responce.data.main.temp);
   updatedDay.innerHTML = date(responce.data.dt * 1000);
+  console.log(date(responce.data.dt * 1000));
   updatedTime.innerHTML = timing(responce.data.dt * 1000);
   sunriseTime.innerHTML = timing(responce.data.sys.sunrise * 1000);
   sunsetTime.innerHTML = timing(responce.data.sys.sunset * 1000);
+}
+
+function fiveDayForecast(responce) {
+  let forecastDayTwo = document.querySelector("#dayTwoForecast");
+  let forecastDayThree = document.querySelector("#dayThreeForecast");
+  let forecastDayFour = document.querySelector("#dayFourForecast");
+  let forecastDayFive = document.querySelector("#dayFiveForecast");
+
+  let forecast = responce.data.list[8];
+  console.log(forecast);
+  console.log(responce.data);
+  forecastDayTwo.innerHTML = `
+                <div class="col-2 cols">
+                  <img class="icon" src="http://openweathermap.org/img/wn/${
+                    forecast.weather[0].icon
+                  }@2x.png" alt="${forecast.weather[0].description}" />
+                </div>
+                <div class="col-3 cols" id="dayTwoName">${date(
+                  forecast.dt * 1000
+                )}</div>
+                <div class="col-2 cols" id="dayTwoTempreture">${Math.round(
+                  forecast.main.temp_max
+                )}°</div>
+                <div class="col-5 cols">
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayTwoHumidity">${
+                      forecast.main.humidity
+                    }</span>%
+                  </span>
+                  <span class="feels-like" id="feelsLike"
+                    >Feels like:  <span id="dayTwoTemp">${Math.round(
+                      forecast.main.feels_like
+                    )}°</span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayTwoWindSpeed">${Math.round(
+                      forecast.wind.speed
+                    )}</span> km/h</span
+                  >
+                  <span class="description" id="description"
+                    ><span id="dayTwoDescription">${
+                      forecast.weather[0].description
+                    }</span>
+                  </span>
+                </div>`;
+
+  forecast = responce.data.list[16];
+  forecastDayThree.innerHTML += `
+                <div class="col-2 cols">
+                  <img class="icon" src="http://openweathermap.org/img/wn/${
+                    forecast.weather[0].icon
+                  }@2x.png" alt="${forecast.weather[0].description}" />
+                </div>
+                <div class="col-3 cols" id="dayThreeName">${date(
+                  forecast.dt * 1000
+                )}</div>
+                <div class="col-2 cols" id="dayThreeTemperature">${Math.round(
+                  forecast.main.temp_max
+                )}°</div>
+                <div class="col-5 cols">
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayThreeHumidity">${
+                      forecast.main.humidity
+                    } </span>%
+                  </span>
+                  <span class="feels-like" id="feelsLike"
+                    >Feels like <span id="dayThreeTemp">${Math.round(
+                      forecast.main.feels_like
+                    )}°</span>
+                  </span>
+                  <br />
+                  <span class="wind" id="wind">
+                    Wind <span id="dayThreeWindSpeed">${Math.round(
+                      forecast.wind.speed
+                    )}</span> km/h</span
+                  >
+                  <span class="description" id="description"
+                    ><span id="dayThreeDescription">${
+                      forecast.weather[0].description
+                    }</span>
+                  </span>
+                </div>`;
+
+  forecast = responce.data.list[24];
+  forecastDayFour.innerHTML += `  
+  <div class="col-2 cols">
+                   <img class="icon" src="http://openweathermap.org/img/wn/${
+                     forecast.weather[0].icon
+                   }@2x.png" alt="${forecast.weather[0].description}" />
+                </div>
+                <div class="col-3 cols" id="dayFourName">${date(
+                  forecast.dt * 1000
+                )}</div>
+                <div class="col-2 cols" id="dayFourTemperature">${Math.round(
+                  forecast.main.temp_max
+                )}°</div>
+                <div class="col-5 cols">
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayFourHumidity">${
+                      forecast.main.humidity
+                    } </span>%
+                  </span>
+                  <span class="feels-like" id="feelsLike"
+                    >Feels like <span id="dayFourTemp">${Math.round(
+                      forecast.main.feels_like
+                    )}°</span>
+                  </span>
+                  <br />
+                   <span class="wind" id="wind">
+                    Wind <span id="dayFourWindSpeed">${Math.round(
+                      forecast.wind.speed
+                    )}</span> km/h</span
+                  >
+                  <span class="description" id="description"
+                    ><span id="dayFourDescription">${
+                      forecast.weather[0].description
+                    }</span>
+                  </span>
+                </div>`;
+
+  forecast = responce.data.list[32];
+  forecastDayFive.innerHTML += `  
+                 <div class="col-2 cols">
+                    <img class="icon" src="http://openweathermap.org/img/wn/${
+                      forecast.weather[0].icon
+                    }@2x.png" alt="${forecast.weather[0].description}" />
+                </div>
+                <div class="col-3 cols" id="dayFiveName">${date(
+                  forecast.dt * 1000
+                )}</div>
+                <div class="col-2 cols" id="dayFiveTemperature">${Math.round(
+                  forecast.main.temp_max
+                )}°</div>
+                <div class="col-5 cols">
+                  <span class="humidity" id="humidity"
+                    >Humidity <span id="dayFiveHumidity">${
+                      forecast.main.humidity
+                    } </span>%
+                  </span>
+                   <span class="feels-like" id="feelsLike"
+                    >Feels like <span id="dayFiveTemp">${Math.round(
+                      forecast.main.feels_like
+                    )}°</span>
+                    </span>
+                  <br />
+                   <span class="wind" id="wind">
+                    Wind <span id="dayFiveWindSpeed">${Math.round(
+                      forecast.wind.speed
+                    )}</span> km/h</span
+                  >
+                  <span class="description" id="description"
+                    ><span id="dayFiveDescription">${
+                      forecast.weather[0].description
+                    }</span>
+                  </span>
+                </div>`;
 }
 
 function search(city) {
   let apiKey = "c3fb1aea0fcac49229fe92764b89263e";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(fiveDayForecast);
 }
 
 function searchBar(event) {

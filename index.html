@@ -21,7 +21,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather</title>
   </head>
-
   <body>
     <div class="container">
       <div class="card frame">
@@ -35,7 +34,7 @@
             <div class="col-4 pr-0">
               <span class="temperature h2" id="temperature"> </span>
               <span class="tempUnits">
-                <a href="#" id="celsius-link" class="active">°C</a> 
+                <a href="#" id="celsius-link" class="active">°C</a>
                 <a href="#" id="fahrenheit-link" class="">°F</a>
               </span>
             </div>
@@ -64,7 +63,7 @@
                   <img src="" alt="" id="todayIcon" class="icon" />
                 </div>
                 <div class="col-3 cols" id="dayOneName"></div>
-                <div class="col-2 cols" id="dayOneTempreture"></div>
+                <div class="col-2 cols" id="dayOneTempreture">°</div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
                     >Humidity <span id="dayOneHumidity"> </span>%
@@ -83,97 +82,16 @@
               </div>
             </li>
             <li class="list-group-item py-2 lines">
-              <div class="row day">
-                <div class="col-2 cols">
-                  <i class="far fa-sun"></i>
-                </div>
-                <div class="col-3 cols" id="dayTwoName">Tues</div>
-                <div class="col-2 cols" id="dayTwoTempreture">20°C</div>
-                <div class="col-5 cols">
-                  <span class="humidity" id="humidity"
-                    >Humidity <span id="dayTwoHumidity"> </span>%
-                  </span>
-                  <span class="sunrise" id="sunrise"
-                    >Sunrise <span id="dayTwoSunrise"></span>
-                  </span>
-                  <br />
-                  <span class="wind" id="wind">
-                    Wind <span id="dayTwoWindSpeed"></span> km/h</span
-                  >
-                  <span class="sunset" id="sunset"
-                    >Sunset <span id="dayTwoSunset"></span>
-                  </span>
-                </div>
-              </div>
+              <div class="row day" id="dayTwoForecast"></div>
             </li>
             <li class="list-group-item py-2 lines">
-              <div class="row day">
-                <div class="col-2 cols">
-                  <i class="far fa-sun"></i>
-                </div>
-                <div class="col-3 cols" id="dayThreeName">Weds</div>
-                <div class="col-2 cols" id="dayThreeTemperature">25°C</div>
-                <div class="col-5 cols">
-                  <span class="humidity" id="humidity"
-                    >Humidity <span id="dayThreeHumidity"> </span>%
-                  </span>
-                  <span class="sunrise" id="sunrise"
-                    >Sunrise <span id="dayThreeSunrise"></span>
-                  </span>
-                  <br />
-                  <span class="wind" id="wind">
-                    Wind <span id="dayThreeWindSpeed"></span> km/h</span
-                  >
-                  <span class="sunset" id="sunset"
-                    >Sunset <span id="dayThreeSunset"></span>
-                </div>
-              </div>
+              <div class="row day" id="dayThreeForecast"></div>
             </li>
             <li class="list-group-item py-2 lines">
-              <div class="row day">
-                <div class="col-2 cols">
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-                <div class="col-3 cols" id="dayFourName">Thurs</div>
-                <div class="col-2 cols" id="dayFourTemperature">22°C</div>
-                <div class="col-5 cols">
-                  <span class="humidity" id="humidity"
-                    >Humidity <span id="dayFourHumidity"> </span>%
-                  </span>
-                  <span class="sunrise" id="sunrise"
-                    >Sunrise <span id="dayFourSunrise"></span>
-                  </span>
-                  <br />
-                  <span class="wind" id="wind">
-                    Wind <span id="dayFourWindSpeed"></span> km/h</span
-                  >
-                  <span class="sunset" id="sunset"
-                    >Sunset <span id="dayFourSunset"></span>
-                </div>
-              </div>
+              <div class="row day" id="dayFourForecast"></div>
             </li>
             <li class="list-group-item py-2 lines">
-              <div class="row day">
-                <div class="col-2 cols">
-                  <i class="fas fa-cloud-sun-rain"></i>
-                </div>
-                <div class="col-3 cols" id="dayFiveName">Fri</div>
-                <div class="col-2 cols" id="dayFiveTemperature">20°C</div>
-                <div class="col-5 cols">
-                  <span class="humidity" id="humidity"
-                    >Humidity <span id="dayFiveHumidity"> </span>%
-                  </span>
-                  <span class="sunrise" id="sunrise"
-                    >Sunrise <span id="dayFiveSunrise"></span>
-                  </span>
-                  <br />
-                  <span class="wind" id="wind">
-                    Wind <span id="dayFiveWindSpeed"></span> km/h</span
-                  >
-                  <span class="sunset" id="sunset"
-                    >Sunset <span id="dayFiveSunset"></span>
-                </div>
-              </div>
+              <div class="row day" id="dayFiveForecast"></div>
             </li>
           </ul>
         </div>

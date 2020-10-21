@@ -41,7 +41,9 @@ li {
 }
 
 .lines .sunrise,
-.lines .sunset {
+.lines .feels-like,
+.lines .sunset,
+.lines .description {
   display: none;
 }
 
@@ -51,13 +53,10 @@ li {
 }
 
 .lines:hover .sunrise,
-.lines:hover .sunset {
+.lines:hover .feels-like,
+.lines:hover .sunset,
+.lines:hover .description {
   display: inline;
-}
-
-.far,
-.fas {
-  color: #790a2d;
 }
 
 .dayTime,
@@ -73,7 +72,7 @@ li {
   max-width: 50px;
 }
 
-.weatherDescription::first-letter {
+.weatherDescription:first-letter {
   text-transform: capitalize;
 }
 
