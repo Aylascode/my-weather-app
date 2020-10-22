@@ -117,7 +117,7 @@ function fiveDayForecast(responce) {
                   <span class="humidity" id="humidity"
                     >humidity <span id="dayThreeHumidity">${
                       forecast.main.humidity
-                    } </span>%
+                    }</span>%
                   </span>
                   <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayThreeTemp">${Math.round(
@@ -154,7 +154,7 @@ function fiveDayForecast(responce) {
                   <span class="humidity" id="humidity"
                     >humidity <span id="dayFourHumidity">${
                       forecast.main.humidity
-                    } </span>%
+                    }</span>%
                   </span>
                   <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayFourTemp">${Math.round(
@@ -191,7 +191,7 @@ function fiveDayForecast(responce) {
                   <span class="humidity" id="humidity"
                     >humidity <span id="dayFiveHumidity">${
                       forecast.main.humidity
-                    } </span>%
+                    }</span>%
                   </span>
                    <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayFiveTemp">${Math.round(
