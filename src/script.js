@@ -62,8 +62,9 @@ function fiveDayForecast(responce) {
   let forecastDayThree = document.querySelector("#dayThreeForecast");
   let forecastDayFour = document.querySelector("#dayFourForecast");
   let forecastDayFive = document.querySelector("#dayFiveForecast");
+  let forecast = null;
 
-  let forecast = responce.data.list[8];
+  forecast = responce.data.list[8];
   forecastDayTwo.innerHTML = `
                 <div class="col-2 cols">
                   <img class="icon" src="http://openweathermap.org/img/wn/${
@@ -101,7 +102,7 @@ function fiveDayForecast(responce) {
                 </div>`;
 
   forecast = responce.data.list[16];
-  forecastDayThree.innerHTML += `
+  forecastDayThree.innerHTML = `
                 <div class="col-2 cols">
                   <img class="icon" src="http://openweathermap.org/img/wn/${
                     forecast.weather[0].icon
@@ -138,7 +139,7 @@ function fiveDayForecast(responce) {
                 </div>`;
 
   forecast = responce.data.list[24];
-  forecastDayFour.innerHTML += `  
+  forecastDayFour.innerHTML = `  
   <div class="col-2 cols">
                    <img class="icon" src="http://openweathermap.org/img/wn/${
                      forecast.weather[0].icon
@@ -175,7 +176,7 @@ function fiveDayForecast(responce) {
                 </div>`;
 
   forecast = responce.data.list[32];
-  forecastDayFive.innerHTML += `  
+  forecastDayFive.innerHTML = `  
                  <div class="col-2 cols">
                     <img class="icon" src="http://openweathermap.org/img/wn/${
                       forecast.weather[0].icon
