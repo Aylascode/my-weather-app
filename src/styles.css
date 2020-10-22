@@ -8,9 +8,10 @@
 }
 .h1,
 .h2,
-.dayTime,
-.tempUnits,
-.weatherDescription {
+.day-time,
+.temp-units,
+.weather-description,
+.today-feels-like {
   color: #790a2d;
 }
 .temp {
@@ -59,7 +60,7 @@ li {
   display: inline;
 }
 
-.dayTime,
+.day-time,
 .cityWeather {
   margin-bottom: 0;
 }
@@ -72,22 +73,22 @@ li {
   max-width: 50px;
 }
 
-.weatherDescription:first-letter {
+.weather-description:first-letter {
   text-transform: capitalize;
 }
 
-.tempUnits {
+.temp-units {
   margin-bottom: 20px;
   margin-right: 5px;
 }
 
-.tempUnits .active {
+.temp-units .active {
   color: #790a2d;
   cursor: default;
   font-size: 20px;
   font-weight: bold;
 }
 
-.tempUnits .active:hover {
+.temp-units .active:hover {
   text-decoration: none;
 }

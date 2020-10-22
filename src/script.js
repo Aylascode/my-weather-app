@@ -28,6 +28,7 @@ function showTemperature(responce) {
   let windSpeed = document.querySelector("#dayOneWindSpeed");
   let dayOneTemp = document.querySelector("#dayOneTempreture");
   let weatherIcon = document.querySelector("#todayIcon");
+  let feelsLike = document.querySelector("#feelsLike");
 
   let updatedDay = document.querySelector("#today");
   let updatedTime = document.querySelector("#time");
@@ -47,6 +48,7 @@ function showTemperature(responce) {
     `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`
   );
   weatherIcon.setAttribute("alt", responce.data.weather[0].description);
+  feelsLike.innerHTML = Math.round(responce.data.main.feels_like);
 
   celsiusTemperature = Math.round(responce.data.main.temp);
   updatedDay.innerHTML = date(responce.data.dt * 1000);
@@ -68,26 +70,26 @@ function fiveDayForecast(responce) {
                     forecast.weather[0].icon
                   }@2x.png" alt="${forecast.weather[0].description}" />
                 </div>
-                <div class="col-3 cols" id="dayTwoName">${date(
+                <div class="col-3 cols active" id="dayTwoName">${date(
                   forecast.dt * 1000
                 )}</div>
                 <div class="col-2 cols" id="dayTwoTempreture">${Math.round(
                   forecast.main.temp_max
-                )}°</div>
+                )}°C</div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
-                    >Humidity <span id="dayTwoHumidity">${
+                    >humidity <span id="dayTwoHumidity">${
                       forecast.main.humidity
                     }</span>%
                   </span>
                   <span class="feels-like" id="feelsLike"
-                    >Feels like:  <span id="dayTwoTemp">${Math.round(
+                    >feels like:  <span id="dayTwoTemp">${Math.round(
                       forecast.main.feels_like
                     )}°</span>
                   </span>
                   <br />
                   <span class="wind" id="wind">
-                    Wind <span id="dayTwoWindSpeed">${Math.round(
+                    wind <span id="dayTwoWindSpeed">${Math.round(
                       forecast.wind.speed
                     )}</span> km/h</span
                   >
@@ -105,26 +107,26 @@ function fiveDayForecast(responce) {
                     forecast.weather[0].icon
                   }@2x.png" alt="${forecast.weather[0].description}" />
                 </div>
-                <div class="col-3 cols" id="dayThreeName">${date(
+                <div class="col-3 cols active" id="dayThreeName">${date(
                   forecast.dt * 1000
                 )}</div>
                 <div class="col-2 cols" id="dayThreeTemperature">${Math.round(
                   forecast.main.temp_max
-                )}°</div>
+                )}°C</div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
-                    >Humidity <span id="dayThreeHumidity">${
+                    >humidity <span id="dayThreeHumidity">${
                       forecast.main.humidity
                     } </span>%
                   </span>
                   <span class="feels-like" id="feelsLike"
-                    >Feels like <span id="dayThreeTemp">${Math.round(
+                    >feels like <span id="dayThreeTemp">${Math.round(
                       forecast.main.feels_like
                     )}°</span>
                   </span>
                   <br />
                   <span class="wind" id="wind">
-                    Wind <span id="dayThreeWindSpeed">${Math.round(
+                    wind <span id="dayThreeWindSpeed">${Math.round(
                       forecast.wind.speed
                     )}</span> km/h</span
                   >
@@ -142,26 +144,26 @@ function fiveDayForecast(responce) {
                      forecast.weather[0].icon
                    }@2x.png" alt="${forecast.weather[0].description}" />
                 </div>
-                <div class="col-3 cols" id="dayFourName">${date(
+                <div class="col-3 cols active" id="dayFourName">${date(
                   forecast.dt * 1000
                 )}</div>
                 <div class="col-2 cols" id="dayFourTemperature">${Math.round(
                   forecast.main.temp_max
-                )}°</div>
+                )}°C</div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
-                    >Humidity <span id="dayFourHumidity">${
+                    >humidity <span id="dayFourHumidity">${
                       forecast.main.humidity
                     } </span>%
                   </span>
                   <span class="feels-like" id="feelsLike"
-                    >Feels like <span id="dayFourTemp">${Math.round(
+                    >feels like <span id="dayFourTemp">${Math.round(
                       forecast.main.feels_like
                     )}°</span>
                   </span>
                   <br />
                    <span class="wind" id="wind">
-                    Wind <span id="dayFourWindSpeed">${Math.round(
+                    wind <span id="dayFourWindSpeed">${Math.round(
                       forecast.wind.speed
                     )}</span> km/h</span
                   >
@@ -179,26 +181,26 @@ function fiveDayForecast(responce) {
                       forecast.weather[0].icon
                     }@2x.png" alt="${forecast.weather[0].description}" />
                 </div>
-                <div class="col-3 cols" id="dayFiveName">${date(
+                <div class="col-3 cols active" id="dayFiveName">${date(
                   forecast.dt * 1000
                 )}</div>
                 <div class="col-2 cols" id="dayFiveTemperature">${Math.round(
                   forecast.main.temp_max
-                )}°</div>
+                )}°C</div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
-                    >Humidity <span id="dayFiveHumidity">${
+                    >humidity <span id="dayFiveHumidity">${
                       forecast.main.humidity
                     } </span>%
                   </span>
                    <span class="feels-like" id="feelsLike"
-                    >Feels like <span id="dayFiveTemp">${Math.round(
+                    >feels like <span id="dayFiveTemp">${Math.round(
                       forecast.main.feels_like
                     )}°</span>
                     </span>
                   <br />
                    <span class="wind" id="wind">
-                    Wind <span id="dayFiveWindSpeed">${Math.round(
+                    wind <span id="dayFiveWindSpeed">${Math.round(
                       forecast.wind.speed
                     )}</span> km/h</span
                   >

@@ -25,15 +25,18 @@
     <div class="container">
       <div class="card frame">
         <div class="card-body pb-1">
-          <h1 class="cityWeather h1" id="city"></h1>
-          <p class="dayTime">
+          <h1 class="city-weather h1" id="city"></h1>
+          <p class="day-time">
             Updated: <span id="today"> </span> <span id="time"></span>
           </p>
-          <p class="weatherDescription" id="weatherDescription"></p>
+          <span class="today-feels-like">
+            Feels like <span class="today-feels-like" id="feelsLike"></span>°C
+          </span>
+          <p class="weather-description" id="weatherDescription"></p>
           <div class="row cityTemp">
             <div class="col-4 pr-0">
               <span class="temperature h2" id="temperature"> </span>
-              <span class="tempUnits">
+              <span class="temp-units">
                 <a href="#" id="celsius-link" class="active">°C</a>
                 <a href="#" id="fahrenheit-link" class="">°F</a>
               </span>
@@ -63,20 +66,22 @@
                   <img src="" alt="" id="todayIcon" class="icon" />
                 </div>
                 <div class="col-3 cols" id="dayOneName"></div>
-                <div class="col-2 cols" id="dayOneTempreture">°</div>
+                <div class="col-2 cols">
+                  <span id="dayOneTempreture"></span><span>°C</span>
+                </div>
                 <div class="col-5 cols">
                   <span class="humidity" id="humidity"
-                    >Humidity <span id="dayOneHumidity"> </span>%
+                    >humidity <span id="dayOneHumidity"> </span>%
                   </span>
                   <span class="sunrise" id="sunrise"
-                    >Sunrise <span id="dayOneSunrise"></span>
+                    >sunrise <span id="dayOneSunrise"></span>
                   </span>
                   <br />
                   <span class="wind" id="wind">
-                    Wind <span id="dayOneWindSpeed"></span> km/h</span
+                    wind <span id="dayOneWindSpeed"></span> km/h</span
                   >
                   <span class="sunset" id="sunset"
-                    >Sunset <span id="dayOneSunset"></span>
+                    >sunset <span id="dayOneSunset"></span>
                   </span>
                 </div>
               </div>
