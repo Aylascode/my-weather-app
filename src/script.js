@@ -85,7 +85,7 @@ function fiveDayForecast(responce) {
                   <span class="feels-like" id="feelsLike"
                     >feels like:  <span id="dayTwoTemp">${Math.round(
                       forecast.main.feels_like
-                    )}°</span>
+                    )}°C</span>
                   </span>
                   <br />
                   <span class="wind" id="wind">
@@ -122,7 +122,7 @@ function fiveDayForecast(responce) {
                   <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayThreeTemp">${Math.round(
                       forecast.main.feels_like
-                    )}°</span>
+                    )}°C</span>
                   </span>
                   <br />
                   <span class="wind" id="wind">
@@ -159,7 +159,7 @@ function fiveDayForecast(responce) {
                   <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayFourTemp">${Math.round(
                       forecast.main.feels_like
-                    )}°</span>
+                    )}°C</span>
                   </span>
                   <br />
                    <span class="wind" id="wind">
@@ -196,7 +196,7 @@ function fiveDayForecast(responce) {
                    <span class="feels-like" id="feelsLike"
                     >feels like <span id="dayFiveTemp">${Math.round(
                       forecast.main.feels_like
-                    )}°</span>
+                    )}°C</span>
                     </span>
                   <br />
                    <span class="wind" id="wind">

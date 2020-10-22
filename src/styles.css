@@ -35,7 +35,11 @@ li {
   cursor: default;
   padding: 5px 10px;
 }
-.lines:hover {
+.lines-one:hover,
+.lines-two:hover,
+.lines-three:hover,
+.lines-four:hover,
+.lines-five:hover {
   background-image: linear-gradient(to top, #8b90d6 0%, #5096b6 100%);
   transition: all 150ms ease-in-out;
   cursor: default;
